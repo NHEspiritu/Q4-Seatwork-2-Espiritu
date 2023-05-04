@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Q4 Seatwork 2</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Castoro+Titling&family=Chivo+Mono:ital,wght@1,100&family=Delicious+Handrawn&family=Gloock&family=IBM+Plex+Serif:ital,wght@1,200&family=Inconsolata&family=Indie+Flower&family=Instrument+Serif&family=Martian+Mono:wght@300&family=Oswald&family=Playfair+Display:ital,wght@1,400;1,700&family=Roboto+Mono:ital@1&family=Shantell+Sans:wght@300&family=Unbounded:wght@300&family=Vidaloka&display=swap" rel="stylesheet">
+</head>
+<style>
+	body{
+	font-family: 'Instrument Serif', serif;
+	margin:0px;
+	padding: 0px;
+	background-color: #7902DB;
+}
+.converter-body{
+	width: 400px;
+	height: 1500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 0px 2px 1px #cacaca;
+}
+.converter-title{
+	text-align: center;
+	margin: 13px 0px;
+}
+input{
+	height: 25px;
+	text-align: center;
+}
+#input{
+	margin-left: 25px;
+}
+#inputType,#resultType{
+	width: 166.66px;
+	margin-left: 25px;
+	color: silver;
+}
+#resultType{
+	mergin-left: 12.5px;
+}
+table, th{
+	text-align: center;
+	background-color: white;
+}
+</style>
+
+<body><center>
+
+    <div class="container">
+    	<center>
+    	
+    	<h1 class="converter-title">Temprature Conversion</h1>
+<form>
+    	<input type="text" placeholder="Input" id="input">
+    	<span>=</span>
+    	<input type="text" placeholder="Result" id="result">
+
+
+    	<select id="inputType">
+    		<option value="fahrenheit">Farenheit</option>
+    		<option value="celcius">Celsius</option>
+    	</select>
+
+    	<select id="resultType">
+    		<option value="farenheit">Farenheit</option>
+    		<option value="celsius">Celsius</option>
+    	</select>
+</form>
+        </center>
+    </div>
+
+
+    <p><div class="container"><center>
+    	<button id="convert-btn">Convert</button>
+    </center></div></p>
+
+
+
+   
+    <script type="text/javascript">
+            var input = document.getElementById('input');
+            var result = document.getElementById('result');
+            var inputType = document.getElementById('inputType')
+            var resultType = document.getElementById('resultType')
+            var inputTypeValue,resultTypeValue;
+
+            //now add listener
+            input.addEventListener("keyup",myResult);
+            inputType.addEventListener("change",myResult)
+            resultType.addEventListener("change",myResult)
+
+            //taking initial value
+            inputTypeValue = inputType.value;
+            resultTypeValue = resultType.value;
+
+
+            function myResult(){
+
+
+            //when we change the input and output type value we nedd to update the 
+            //inputTypeValue and resultTypeValue
+
+            inputTypeValue = inputType.value;
+            resultTypeValue = resultType.value;
+
+
+//now compare the input and resultType value and add formula
+
+   if (inputTypeValue === "celsius" && resultTypeValue==="fahrenheit"){
+
+   	    //this is meter to kilometer formula
+   	    result.value = Number(input.value) ;
+   }else if(inputTypeValue === "celsius" && resultTypeValue==="celsius"){
+
+   	   //this is meter to Centimeter formula
+   	   result.value = Number(input.value) *;
+   }
+
+
+   if (inputTypeValue === "fahrenheit" && resultTypeValue==="celsius"){
+   	    //this is kilometer to meter formula
+   	    result.value = Number(input.value) * ;
+   }else if(inputTypeValue === "fahrenheit" && resultTypeValue==="fahrenheit"){
+   	  //this is kilometer to Centimeter formula
+   	  result.value = Number(input.value) * ;
+   }
+    </script>
+
+<div class="container"><center>
+<p id="today"></p>
+
+<script>
+const date = new Date();
+document.getElementById("today").innerHTML = date;
+</script>
+</div></center>
+
+<center><table border="4" width="90%">
+<tr>
+	<th width="40%">Celsius</th>
+	<th width="40%">Fahrenheit</th>
+	<th width="40%">Description</th>
+</tr>
+
+<tr>
+	<td>-273.15</td>
+	<td>-459.67-</td>
+	<td>Absolute zero temprature</td>
+</tr>
+
+<tr>
+	<td>o</td>
+	<td>32.0</td>
+	<td>Freezing/melting point of water</td>
+</tr>
+
+<tr>
+	<td>21</td>
+	<td>69.8</td>
+	<td>Room temprature</td>
+</tr>
+
+<tr>
+	<td>37</td>
+	<td>98.6</td>
+	<td>Average body temprature</td>
+</tr>
+
+<tr>
+	<td>100</td>
+	<td>212.0</td>
+	<td>Boiling point of water</td>
+</tr>
+</table></center>
+
+</center>
+</body>
+</html>
